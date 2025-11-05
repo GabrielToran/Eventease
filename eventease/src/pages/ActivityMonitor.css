@@ -1,0 +1,50 @@
+/* ActivityMonitor.css */
+
+.activity-monitor-container {
+  padding: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .activity-monitor-container {
+    padding: 0.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .activity-monitor-container {
+    padding: 2rem;
+  }
+}
+
+/* Activity cards animation */
+.activity-item {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Hover effects for desktop */
+@media (hover: hover) and (pointer: fine) {
+  .activity-item:hover {
+    background-color: #f9fafb;
+  }
+}
+
+/* Touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .activity-item {
+    min-height: 60px;
+  }
+}

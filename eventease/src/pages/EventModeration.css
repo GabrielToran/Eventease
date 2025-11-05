@@ -1,0 +1,91 @@
+/* EventModeration.css */
+
+.event-moderation-container {
+  padding: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .event-moderation-container {
+    padding: 0.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .event-moderation-container {
+    padding: 2rem;
+  }
+}
+
+/* Event card animations */
+.event-card {
+  animation: fadeIn 0.3s ease-out;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover effects for desktop */
+@media (hover: hover) and (pointer: fine) {
+  .event-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  }
+}
+
+/* Modal animations */
+.modal-overlay {
+  animation: fadeInOverlay 0.2s ease-out;
+}
+
+@keyframes fadeInOverlay {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .event-card {
+    padding: 1.5rem;
+  }
+  
+  .action-button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Status badge colors */
+.status-badge {
+  transition: all 0.2s;
+}

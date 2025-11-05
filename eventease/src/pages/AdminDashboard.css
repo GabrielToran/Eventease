@@ -1,0 +1,199 @@
+/* AdminDashboard.css */
+
+.admin-dashboard-container {
+  padding: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .admin-dashboard-container {
+    padding: 0.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .admin-dashboard-container {
+    padding: 2rem;
+  }
+}
+
+/* Stats card animations */
+.stat-card {
+  animation: fadeInUp 0.4s ease-out;
+  animation-fill-mode: both;
+}
+
+.stat-card:nth-child(1) { animation-delay: 0.1s; }
+.stat-card:nth-child(2) { animation-delay: 0.2s; }
+.stat-card:nth-child(3) { animation-delay: 0.3s; }
+.stat-card:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Action card hover effects */
+.action-card {
+  transition: all 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .action-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  }
+}
+
+/* Stat value pulse */
+.stat-value {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Activity feed animations */
+.activity-item {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Button hover effects */
+.stat-button,
+.action-card button {
+  transition: all 0.2s ease;
+}
+
+.stat-button:hover,
+.action-card button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.stat-button:active,
+.action-card button:active {
+  transform: scale(0.98);
+}
+
+/* Touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .stat-button,
+  .action-card button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Loading spinner */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+/* Error and success states */
+.error-message {
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+/* Icon animations */
+.stat-icon,
+.action-icon {
+  transition: transform 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .stat-card:hover .stat-icon,
+  .action-card:hover .action-icon {
+    transform: rotate(10deg) scale(1.1);
+  }
+}
+
+/* Responsive grid adjustments */
+@media (max-width: 640px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .actions-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .actions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .admin-dashboard-container {
+    background-color: #1f2937;
+  }
+  
+  .stat-card,
+  .action-card,
+  .activity-card {
+    background-color: #374151;
+    color: #f3f4f6;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .stat-card,
+  .action-card,
+  .activity-item,
+  .stat-icon,
+  .action-icon {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  .action-card button,
+  .stat-button {
+    display: none;
+  }
+}

@@ -1,0 +1,51 @@
+/* src/pages/MyRegistrations.css */
+.my-registrations-container {
+  min-height: 100vh;
+  background-color: #f3f4f6;
+}
+
+.registrations-grid {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.registration-card {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.registration-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.cancel-button:hover {
+  background-color: #dc2626;
+}
+
+.filter-tab:hover {
+  background-color: #f3f4f6;
+}
+
+.browse-button:hover {
+  background-color: #1d4ed8;
+}
+
+@media (max-width: 768px) {
+  .registrations-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .filter-tabs {
+    flex-direction: column;
+  }
+}

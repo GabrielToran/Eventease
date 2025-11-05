@@ -1,0 +1,19 @@
+/* src/pages/EventsList.css */
+.events-list-container {
+  padding: 2rem;
+}
+
+.event-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 768px) {
+  .eventsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .filtersGrid {
+    grid-template-columns: 1fr;
+  }
+}
